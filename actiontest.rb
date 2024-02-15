@@ -6,11 +6,11 @@ require_relative "lib/private_strategy"
 class Actiontest < Formula
   desc ""
   homepage "https://github.com/tcotav/actiontest"
-  version "1.0.5"
+  version "1.0.6"
 
   on_macos do
-    url "https://github.com/tcotav/actiontest/releases/download/v1.0.5/actiontest_1.0.5_darwin_all.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
-    sha256 "1b98cbf3bb37e37fe87e799a73bfe9c7cd211436dbfad322a20ccf73b66436b1"
+    url "https://github.com/tcotav/actiontest/releases/download/v1.0.6/actiontest_1.0.6_darwin_all.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "0a221803abba0afa29844c633e21538317abd66cec1425403260c8dd77e73be8"
 
     def install
       bin.install "actiontest"
@@ -18,17 +18,17 @@ class Actiontest < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/tcotav/actiontest/releases/download/v1.0.5/actiontest_1.0.5_linux_amd64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
-      sha256 "75315641c2f705078b08a63b82b3f87c952988e6dd1010691326411e470b2c32"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tcotav/actiontest/releases/download/v1.0.6/actiontest_1.0.6_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "0615ac24b9eea29d31ec88aa5a981bb019e3d0eb4425c725a8cfef2489a14da4"
 
       def install
         bin.install "actiontest"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tcotav/actiontest/releases/download/v1.0.5/actiontest_1.0.5_linux_arm64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
-      sha256 "5c1d7147bcddd15769ac27a17d80477537fee1774efcb4649adbafef7bf83dbf"
+    if Hardware::CPU.intel?
+      url "https://github.com/tcotav/actiontest/releases/download/v1.0.6/actiontest_1.0.6_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "b29f79bbc7aa44f8eacf9767d88cc9955e750bd2e9db19d454ead05cc1b1459d"
 
       def install
         bin.install "actiontest"
