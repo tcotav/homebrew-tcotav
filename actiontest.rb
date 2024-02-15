@@ -6,11 +6,11 @@ require_relative "lib/private_strategy"
 class Actiontest < Formula
   desc ""
   homepage "https://github.com/tcotav/actiontest"
-  version "1.0.4"
+  version "1.0.5"
 
   on_macos do
-    url "https://github.com/tcotav/actiontest/releases/download/v1.0.4/actiontest_1.0.4_darwin_all.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
-    sha256 "495f0c6d46dbff02a7a2e7632998830f0886b32faf6ffe3e31f3fa29a13efb70"
+    url "https://github.com/tcotav/actiontest/releases/download/v1.0.5/actiontest_1.0.5_darwin_all.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
+    sha256 "1b98cbf3bb37e37fe87e799a73bfe9c7cd211436dbfad322a20ccf73b66436b1"
 
     def install
       bin.install "actiontest"
@@ -19,16 +19,16 @@ class Actiontest < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/tcotav/actiontest/releases/download/v1.0.4/actiontest_1.0.4_linux_amd64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
-      sha256 "ba145e4ce46d11f3c302b4dfa81c9fb67d28180f8bf6be16a42f46b8ce665632"
+      url "https://github.com/tcotav/actiontest/releases/download/v1.0.5/actiontest_1.0.5_linux_amd64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
+      sha256 "75315641c2f705078b08a63b82b3f87c952988e6dd1010691326411e470b2c32"
 
       def install
         bin.install "actiontest"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tcotav/actiontest/releases/download/v1.0.4/actiontest_1.0.4_linux_arm64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
-      sha256 "fd2ae80d27b1c37c92065776decb28ed247c2b5bae57139ebcccd9be0dd696f7"
+      url "https://github.com/tcotav/actiontest/releases/download/v1.0.5/actiontest_1.0.5_linux_arm64.tar.gz", using: GitHubPrivateRepositoryDownloadStrategy
+      sha256 "5c1d7147bcddd15769ac27a17d80477537fee1774efcb4649adbafef7bf83dbf"
 
       def install
         bin.install "actiontest"
